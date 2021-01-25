@@ -44,20 +44,6 @@ var (
 		});`,
 		false)
 
-	esIDPrefixAllowList = []string{
-		"sec-array",
-		"sec-%typedarray%",
-		"sec-string",
-		"sec-date",
-		"sec-number",
-		"sec-math",
-		"sec-arraybuffer-length",
-		"sec-arraybuffer",
-		"sec-regexp",
-		"sec-variable-statement",
-		"sec-ecmascript-standard-built-in-objects",
-	}
-
 	featuresBlockList = []string{
 		"BigInt",                    // not supported at all
 		"IsHTMLDDA",                 // not supported at all
@@ -83,6 +69,8 @@ var (
 		"test/annexB/built-ins/String/prototype/sub":          true,
 		"test/annexB/built-ins/String/prototype/sup":          true,
 
+		"test/annexB/built-ins/RegExp/legacy-accessors/": true,
+
 		// Async/Promise and other totally unsupported functionality
 		"test/built-ins/AsyncArrowFunction":             true,
 		"test/built-ins/AsyncFromSyncIteratorPrototype": true,
@@ -94,6 +82,12 @@ var (
 		"test/built-ins/BigInt":                         true,
 		"test/built-ins/Promise":                        true,
 		"test/built-ins/SharedArrayBuffer":              true,
+		"test/built-ins/NativeErrors/AggregateError":    true,
+		"test/language/eval-code/direct/async":          true,
+		"test/language/expressions/async":               true,
+		"test/language/expressions/dynamic-import":      true,
+		"test/language/expressions/object/dstr/async":   true,
+		"test/language/module-code/top-level-await":     true,
 
 		"test/built-ins/Date/parse/without-utc-offset.js": true, // some other reason ?!? depending on local time
 
@@ -101,6 +95,8 @@ var (
 		"test/built-ins/Array/prototype/splice/throws-if-integer-limit-exceeded.js":   true, // takes forever and is broken
 		"test/built-ins/Array/prototype/unshift/clamps-to-integer-limit.js":           true, // takes forever and is broken
 		"test/built-ins/Array/prototype/unshift/throws-if-integer-limit-exceeded.js":  true, // takes forever and is broken
+
+		"test/built-ins/FinalizationRegistry": true, // still in proposal
 	}
 )
 
